@@ -1,0 +1,38 @@
+h1{
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+
+}
+h2{
+  font-size: 31px;
+}
+
+#bucketPic{
+  width: 50%;
+  text-align: center;
+}
+#Add{
+  font-family: 'Courgette', cursive;
+  width:35%;
+  background-color: #ACD8AA;
+  border-color: black;
+  border-style: solid;
+  font-size: 35px;
+
+}
+
+#addIdea{
+  height:34px;
+}
+
+
+
+#Search{
+  font-family: 'Courgette', cursive;
+  width:35%;
+  font-size: 35px;
+  background-color: #ACD8AA;
+  border-color: black;
+  border-style: solid;
+}
