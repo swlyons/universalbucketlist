@@ -1,32 +1,3 @@
-
-
-
-<!--<form id="newPoki" ng-submit="addPoki()">-->
-  <!--Name: <input type="text" ng-model="Name" value=""><br>-->
-  <!--Url: <input type="url" ng-model="Url" value=""><br>-->
-  <!--<input type="submit" value="Submit">-->
-<!--</form>-->
-
-    <!--<div ng-if='!pokemon.length' class='no-pokemon center stretch'>-->
-      <!--<h1 class='h1'>-->
-        <!--Set up your endpoint at `/pokemon` to get this view working-->
-      <!--</h1>-->
-    <!--</div>-->
-
-    <!--<ul ng-if='pokemon.length' class='list center stretch'>-->
-      <!--<li ng-repeat='p in pokemon' class='pokemon'>-->
-        <!--<h1>{{ p.name }}</h1>-->
-        <!--<img class='avatar' ng-src="{{p.avatarUrl}}" />-->
-      <!--</li>-->
-    <!--</ul>-->
-
-  <!--</div>-->
-
-<!--</body>-->
-<!--</html>-->
-
-
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -63,7 +34,13 @@
         <img id="bucketPic" src="images/bucket.jpg" alt="bucket pic" width="30%">
     </div>
     <div>
-        <p id="idea"></p>
+        <p id="idea">
+        <ul ng-if='suggestions.length'>
+            <li ng-repeat='p in suggestions'>
+                <h1>{{ p.sugg }}</h1>
+            </li>
+        </ul>
+        </p>
     </div></h1>
 </div>
 </body>

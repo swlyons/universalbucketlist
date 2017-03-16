@@ -22,8 +22,10 @@ var suggestions = [
 ];
 
 router.get('/suggestions', function(req, res) {
-res.send(suggestions);
-
+    var index = Math.floor(Math.random() * suggestions.length);
+    var suggestion = suggestions[index];
+    suggestions.splice(index, 1);
+    res.send(suggestion);
 });
 
 router.post('/suggestions', function(req, res) {
@@ -34,3 +36,20 @@ router.post('/suggestions', function(req, res) {
 }); 
 
 module.exports = router;
+
+
+//$(document).ready(function(){
+//  var ideaArray=[];
+//  document.getElementById("Add").addEventListener("click", addIdea);
+//  function addIdea(){
+//    var input = document.getElementById("addIdea");
+//    ideaArray.push(input);
+//  }
+//
+//  document.getElementById("retrieveIdea").addEventListener("click", showIdea);
+//
+//  function showIdea() {
+//    var index = Math.floor(Math.random() * ideaArray.length);
+//    document.getElementById("idea").innerHTML = ideaArray[index];
+//  }
+//});
