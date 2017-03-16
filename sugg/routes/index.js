@@ -29,7 +29,7 @@ res.send(suggestions);
 router.post('/suggestions', function(req, res) {
     console.log("In Suggestion Post");
     console.log(req.body);
-    sugg.push(req.body);
+    suggestions.push(req.body);
     res.end('{"success" : "Updated Successfully", "status" : 200}');
 }); 
 
