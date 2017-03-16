@@ -36,3 +36,12 @@ h2{
   border-color: black;
   border-style: solid;
 }
+
+#complete{
+  font-family: 'Courgette', cursive;
+  width:35%;
+  font-size: 35px;
+  background-color: #ACD8AA;
+  border-color: black;
+  border-style: solid;
+}

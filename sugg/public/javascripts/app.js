@@ -23,7 +23,6 @@ function mainCtrl ($scope, $http, suggestionFetcher) {
 
   $scope.addSugg = function() {
     var formData = {sugg:$scope.sugg};
-    console.log(formData);
     var suggURL = 'suggestions';
     $http({
        url: suggURL,
@@ -36,9 +35,29 @@ function mainCtrl ($scope, $http, suggestionFetcher) {
     });
   }
 
-  suggestionFetcher.get()
-    .then(function (data) {
-      $scope.suggestions = data
-    })
+  $scope.getSugg = function (){
+	if($scope.suggestion != null && $scope.suggestion != undefined && $scope.suggestion != ""){
+	    var formData = {sugg:$scope.suggestion.sugg};
+	    var suggURL = 'suggestions';
+	    $http({
+	       url: suggURL,
+	       method: "POST",
+	       data: formData
+	    }).success(function(data, status, headers, config) {
+	      console.log("Post worked");
+	    }).error(function(data, status, headers, config) {
+	      console.log("Post failed");
+	    });
+
+	}
+	suggestionFetcher.get()
+    	.then(function (data) {
+      	$scope.suggestion = data
+    	})
+  }
+
+  $scope.clearSugg = function (){
+	$scope.suggestion = "";
+	}
 	
 }

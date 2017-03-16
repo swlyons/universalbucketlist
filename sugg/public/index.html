@@ -14,7 +14,7 @@
 <body>
 <div id='app' ng-app='app' ng-controller='mainCtrl'>
 <h1>The Universal Bucketlist</h1><h1>
-    <div id="submitIdea" class="col-sm-6">
+    <div id="submitIdea" class="col-sm-4">
         <form id="newSugg" ng-submit="addSugg()">
             <h3>Add your idea to the bucket: </h3>
             <input type="text" id="addIdea" ng-model="sugg" value="" style="font-size: 32px;">
@@ -23,24 +23,21 @@
             </p>
         </form>
     </div>
-    <div id="retrieveIdea" class="col-sm-6">
-        <form>
+    <div id="ideas" class="col-sm-4">
+	<h2>{{suggestion.sugg}}</h2>
+        <form ng-submit="clearSugg()">
+            <button ng-if='suggestion.sugg.length' id="complete" type="submit">Completed</button>
+        </form>
+</div>
+    <div id="retrieveIdea" class="col-sm-4">
+        <form ng-submit="getSugg()">
             <h3>Feeling Adventurous?</h3>
             <h2>Draw a random idea from the bucket</h2>
-            <button id="Search" type="button">Retrieve</button>
+            <button id="Search" type="submit">Retrieve</button>
         </form>
     </div>
     <div class="col-sm-12" id="bucket">
         <img id="bucketPic" src="images/bucket.jpg" alt="bucket pic" width="30%">
-    </div>
-    <div>
-        <p id="idea">
-        <ul>
-            <li ng-repeat='p in suggestions'>
-                <h1>{{ p.sugg }}</h1>
-            </li>
-        </ul>
-        </p>
     </div></h1>
 </div>
 </body>
